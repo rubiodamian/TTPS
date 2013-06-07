@@ -15,7 +15,7 @@
 <h3>-------------------------------------</h3>
 <s:fielderror/>
 
-<s:form action="">
+<s:form action="RegistrarAction">
 	<s:textfield name="user" label="Usuario"/>
 	<s:password name="password" label="Contraseña"/>
 	<s:textfield name="name" label="Nombre"/>
