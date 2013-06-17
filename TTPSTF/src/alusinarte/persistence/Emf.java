@@ -1,9 +1,9 @@
-package emf;
+package alusinarte.persistence;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class emf {
+public class Emf {
 	
 	
 	public static EntityManagerFactory getEmf(){
