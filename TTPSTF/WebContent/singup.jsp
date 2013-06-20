@@ -21,7 +21,7 @@
 		<s:textfield name="lastname" label="Apellidos" />
 		<s:textfield name="email" label="E-mail" />
 		<s:radio name="gender" label="Sexo" list="{'Masculino', 'Femenino'}" />
-		<s:textfield name="ocupation" label="Ocupacion" />
+		<s:textfield name="occupation" label="Ocupacion" />
 		<s:select name="career"
 			list="{'Lic. en Sistemas','Lic. en Informatica','Analista Programador Universitario'}"
 			headerKey="" headerValue="Seleccionar" label="Carrera que cursa" />
