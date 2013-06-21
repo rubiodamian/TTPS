@@ -13,7 +13,7 @@
 	<h3>-------------------------------------</h3>
 	<s:fielderror />
 
-	<s:form action="addEventAction">
+	<s:form action="addEvent">
 		<s:textfield name="title" label="Titulo" />
 		<s:textfield name="description" label="Descripcion" />
 		<s:textfield name="day" label="Dia" />

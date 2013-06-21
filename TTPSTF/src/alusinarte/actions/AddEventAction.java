@@ -9,11 +9,13 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import alusinarte.dao.impl.hibernate.FactoryDAOHibernate;
 import alusinarte.dao.impl.hibernate.EventDAOHibernate;
+import alusinarte.dao.impl.hibernate.CareerDAOHibernate;
+import alusinarte.classes.Career;
 import alusinarte.classes.Event;
 
-@Action(value = "addEventAction")
-@Results({ @Result(name = "success", location = "/index.jsp"),
-		@Result(name = "input", location = "/addEvent.jsp") })
+//@Action(value = "addEvent")
+//@Results({ @Result(name = "success", location = "/index.jsp"),
+//		@Result(name = "input", location = "/addEvent.jsp") })
 
 public class AddEventAction extends ActionSupport {
 
@@ -25,6 +27,11 @@ public class AddEventAction extends ActionSupport {
 	private String place;
 	private String category;
 	
+	
+	@Action(value="addEvent", 
+		    results={@Result(name="success", location="/index.jsp"),
+					@Result(name = "input", location = "/addEvent.jsp") }
+		  )
 	public String execute() {
 		EventDAOHibernate evtDAO = (EventDAOHibernate) FactoryDAOHibernate.getEvent();
 		Event evento = new Event(getTitle(),getDescription(),getDay(),getHour(),getPlace(),getCategory());

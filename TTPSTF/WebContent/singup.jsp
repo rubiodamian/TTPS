@@ -14,7 +14,7 @@
 	<h3>-------------------------------------</h3>
 	<s:fielderror />
 
-	<s:form action="SingUpAction">
+	<s:form action="addUser">
 		<s:textfield name="username" label="Usuario" />
 		<s:password name="password" label="Contraseña" />
 		<s:textfield name="name" label="Nombre" />
@@ -22,10 +22,11 @@
 		<s:textfield name="email" label="E-mail" />
 		<s:radio name="gender" label="Sexo" list="{'Masculino', 'Femenino'}" />
 		<s:textfield name="occupation" label="Ocupacion" />
-		<s:select name="career"
-			list="{'Lic. en Sistemas','Lic. en Informatica','Analista Programador Universitario'}"
-			headerKey="" headerValue="Seleccionar" label="Carrera que cursa" />
-		<s:submit value="Registrarme" />
+		<s:select label="Carrera" name="career" list="careerDAO.careers" listKey="id"
+			listValue="name" required="true" value="%{careerDAO.careers.{id}}"
+			headerKey="" headerValue="Seleccionar"
+/>
+			<s:submit value="Registrarme" />
 	</s:form>
 
 
