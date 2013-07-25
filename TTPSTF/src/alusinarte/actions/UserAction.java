@@ -29,16 +29,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public User getModel() {
 		return user;
 	}
-	
-	 @Action(value="addUser", 
-	    results={@Result(name="success", location="/index.jsp"),
-				@Result(name = "input", location = "/singup.jsp") }
-	  )
-	public String add()
-	{
-//		System.out.println(this.getCareerDAO().careers().get(0).getName());
-		this.userDAO=(UserDAOHibernate) FactoryDAOHibernate.getUser();
-		this.userDAO.addUser(this.getModel());
 
 	@Action(value = "/users/singup", results = { @Result(name = "success", location = "/singup.jsp") })
 	public String singUp() {

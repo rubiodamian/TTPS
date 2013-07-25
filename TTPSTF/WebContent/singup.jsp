@@ -13,7 +13,6 @@
 	<h1>Registrarse - Nueva cuenta</h1>
 	<h3>-------------------------------------</h3>
 	<s:fielderror />
-	<sn:write name="careerDAO" property="careers" />
 	<s:form action="/users/adduser">
 		<s:textfield name="username" label="Usuario" />
 		<s:password name="password" label="Contraseña" />
@@ -25,12 +24,6 @@
 		<s:select label="Carrera" name="career" list="careerDAO.careers" listKey="id" 
  				listValue="name" required="true" value="%{careerDAO.careers.{id}}" 
 				headerKey="" headerValue="Seleccionar" />
-		<s:select label="Carrera" name="career" list="careerDAO.careers()" listKey="id"
-			listValue="name" required="true" value="%{careerDAO.careers().{id}}" 
-		<s:select label="Carrera" name="career" list="careerDAO.careers()" listKey="id"
-			listValue="name" required="true" value="%{careerDAO.careers().{id}}" 
-			headerKey="" headerValue="Seleccionar"
-/>
 			<s:submit value="Registrarme" />
 	</s:form>
 
