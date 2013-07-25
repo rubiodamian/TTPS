@@ -24,7 +24,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	private User user = new User();
 	private UserDAOHibernate userDAO = new UserDAOHibernate();
 	private CareerDAOHibernate careerDAO = new CareerDAOHibernate();
-
+	
 	@Override
 	public User getModel() {
 		return user;
@@ -58,7 +58,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		// this.getUserDAO().addUser(this.getModel());
 		return SUCCESS;
 	}
-
+		
 	public User getUser() {
 		return user;
 	}
@@ -74,13 +74,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public void setCareerDAO(CareerDAOHibernate careerDAO) {
 		this.careerDAO = careerDAO;
 	}
-
 	public UserDAOHibernate getUserDAO() {
 		return userDAO;
 	}
-
 	public void setUserDAO(UserDAOHibernate userDAO) {
 		this.userDAO = userDAO;
 	}
+
 
 }

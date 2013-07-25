@@ -20,7 +20,7 @@
 		<s:textfield name="hour" label="Hora" />
 		<s:textfield name="place" label="Lugar" />
 		<s:select name="category" list="{'Musica','Arte','Plastica'}"
-			headerKey="" headerValue="Seleccionar" label="Carrera que cursa" />
+			headerKey="" headerValue="Seleccionar" label="Categoría" />
 		<s:submit value="Agregar"/>			
 	</s:form>
 

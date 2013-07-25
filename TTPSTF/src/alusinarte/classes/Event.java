@@ -16,7 +16,12 @@ public class Event {
 	private String place;
 	private String category;
 	
+	public Event(){
+		super(); 
+	}
+	
 	public Event(String tit, String desc, String day, String hour, String place, String cat){
+		super();
 		this.setTitle(tit);
 		this.setDescription(desc);
 		this.setDay(day);
