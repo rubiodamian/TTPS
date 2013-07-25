@@ -23,6 +23,9 @@ public class Career {
 		return "Career [id=" + id + ", name=" + name + "]";
 	}
 	
+	public Career() {
+	}
+	
 	public Career(String name) {
 		super();
 		this.name = name;
