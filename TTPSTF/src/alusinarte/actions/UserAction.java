@@ -9,6 +9,8 @@ import org.apache.struts2.convention.annotation.Results;
 
 import alusinarte.classes.Career;
 import alusinarte.classes.User;
+import alusinarte.dao.impl.hibernate.EventDAOHibernate;
+import alusinarte.dao.impl.hibernate.FactoryDAOHibernate;
 import alusinarte.dao.impl.hibernate.UserDAOHibernate;
 import alusinarte.dao.impl.hibernate.CareerDAOHibernate;
 
@@ -22,11 +24,21 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	private User user = new User();
 	private UserDAOHibernate userDAO = new UserDAOHibernate();
 	private CareerDAOHibernate careerDAO = new CareerDAOHibernate();
-
+	
 	@Override
 	public User getModel() {
 		return user;
 	}
+	
+	 @Action(value="addUser", 
+	    results={@Result(name="success", location="/index.jsp"),
+				@Result(name = "input", location = "/singup.jsp") }
+	  )
+	public String add()
+	{
+//		System.out.println(this.getCareerDAO().careers().get(0).getName());
+		this.userDAO=(UserDAOHibernate) FactoryDAOHibernate.getUser();
+		this.userDAO.addUser(this.getModel());
 
 	@Action(value = "/users/singup", results = { @Result(name = "success", location = "/singup.jsp") })
 	public String singUp() {
@@ -46,7 +58,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		// this.getUserDAO().addUser(this.getModel());
 		return SUCCESS;
 	}
-
+		
 	public User getUser() {
 		return user;
 	}
@@ -62,13 +74,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public void setCareerDAO(CareerDAOHibernate careerDAO) {
 		this.careerDAO = careerDAO;
 	}
-
 	public UserDAOHibernate getUserDAO() {
 		return userDAO;
 	}
-
 	public void setUserDAO(UserDAOHibernate userDAO) {
 		this.userDAO = userDAO;
 	}
+
 
 }
