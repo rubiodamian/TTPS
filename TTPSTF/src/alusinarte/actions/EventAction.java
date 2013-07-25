@@ -5,17 +5,14 @@ import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 
+
 import alusinarte.dao.impl.hibernate.FactoryDAOHibernate;
 import alusinarte.dao.impl.hibernate.EventDAOHibernate;
-import alusinarte.dao.impl.hibernate.CareerDAOHibernate;
-import alusinarte.classes.Career;
 import alusinarte.classes.Event;
 
 
@@ -24,7 +21,7 @@ public class EventAction extends ActionSupport implements ModelDriven<Event> {
 
 	private static final long serialVersionUID = 1L;
 
-	private ArrayList<String> eventos;
+	private ArrayList<Event> eventos;
 	private Event event=new Event();
 	private EventDAOHibernate eventDAO= new EventDAOHibernate();
 	
@@ -35,9 +32,9 @@ public class EventAction extends ActionSupport implements ModelDriven<Event> {
 	
 //	MENSAJES PARA AGREGAR EVENTOS
 	
-	@Action(value="addEventView", 
-		    results={@Result(name="success", location="/addEvent.jsp")}
-		  )	
+	@Action(value = "addEventView", 
+		    results = {@Result(name="success", location="/addEvent.jsp")})	
+
 	public String addView(){
 		return SUCCESS;
 	}
@@ -63,7 +60,7 @@ public class EventAction extends ActionSupport implements ModelDriven<Event> {
 		return SUCCESS;
 	}
 	
-	public ArrayList<String> getEventos(){
+	public ArrayList<Event> getEventos(){
 		return eventos;
 	}
 	
@@ -74,6 +71,7 @@ public class EventAction extends ActionSupport implements ModelDriven<Event> {
 	public String mod(){
 		return SUCCESS;
 	}
+	
 	
 	public Event getEvent() {
 		return event;

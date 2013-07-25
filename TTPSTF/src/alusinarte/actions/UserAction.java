@@ -33,9 +33,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	@Action(value = "/users/singup", results = { @Result(name = "success", location = "/singup.jsp") })
 	public String singUp() {
 //		System.out.println(this.getCareerDAO().careers());
-		for(Career career : this.getCareerDAO().careers()){
-			System.out.println(career);
-		}
+//		for(Career career : this.getCareerDAO().careers()){
+//			System.out.println(career);
+//		}
 		
 		return SUCCESS;
 	}

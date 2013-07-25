@@ -29,7 +29,9 @@ public class Event {
 		this.setPlace(place);
 		this.setCategory(cat);
 	}
-	
+	public long getId(){
+		return id;
+	}
 	public String getTitle() {
 		return title;
 	}

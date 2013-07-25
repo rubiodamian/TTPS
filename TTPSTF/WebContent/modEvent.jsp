@@ -14,17 +14,17 @@
 
 <h1>Seleccione un evento para modificar:</h1>
 
-<s:if test="%{!eventos==null}">
-	<s:form action="modEvent">
+
+<%-- <s:if test="%{eventos!=null}"> --%>
+<s:form action="modEvent">
 		<s:select label="Eventos actuales" name="eventos" list="eventos" />
 		<s:submit value="Modificar"/> 
 	</s:form>
-</s:if>
-<s:if test="%{eventos==null}">
-	<h3>No hay eventos para modificar disponibles.</h3>
-</s:if>
-
-
+	
+<%-- </s:if> --%>
+<%-- <s:if test="%{!eventos==null}"> --%>
+<!-- 	<h3>No hay eventos para modificar disponibles.</h3> -->
+<%-- </s:if> --%>
 				
 </body>
 </html>
@@ -34,6 +34,3 @@
 
 
 
-
-<%-- <s:select name="events" list="{<%while(i.hasNext()){evt=(String)i.next();}%>}" value="<%out.print(evt);%>" --%>
-<%--  headerKey="" headerValue="Seleccionar" label="Evento"/> --%>

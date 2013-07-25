@@ -1,7 +1,10 @@
 package alusinarte.dao.impl.hibernate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -16,18 +19,26 @@ public class CareerDAOHibernate implements CareerDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Career> careers() {
+	public Map<Long,String> careers() {
 		EntityManager em = Emf.getEmf().createEntityManager();
-		String query = "SELECT id,name FROM Career";
-		Query sqlQuery = em.createNativeQuery(query);
+		String query = "SELECT c FROM Career c";
+		Query sqlQuery = em.createQuery(query);
 
 		List<Career> careers = new ArrayList<Career>();
+		Map<Long,String> map = new HashMap<Long, String>();
 		try {
-			careers = sqlQuery.getResultList();
+			careers = sqlQuery.getResultList();			
+			Iterator<Career> i = careers.iterator();
+			while(i.hasNext()){
+				Career c = i.next();
+				map.put(c.getId(),c.getName());
+				System.out.println(c.getId());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return careers;
+		
+		return map;
 	}
 	@Override
 	public void addCareer(Career career) {

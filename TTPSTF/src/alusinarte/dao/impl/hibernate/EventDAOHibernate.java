@@ -1,10 +1,17 @@
 package alusinarte.dao.impl.hibernate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+
+
+
+
 
 
 
@@ -30,14 +37,20 @@ public class EventDAOHibernate implements EventDAO{
 //RECUPERA LOS EVENTOS DE LA BD
 	@SuppressWarnings("unchecked")
 	@Override
-	public ArrayList<String> getEvents() {
+	public ArrayList<Event> getEvents() {
 		EntityManager em=Emf.getEmf().createEntityManager();
-		String query = "SELECT title FROM Event";
+		String query = "SELECT id,title FROM Event e";
 		Query sqlQuery = em.createQuery(query);
 		
-		ArrayList<String> result = null;
+		ArrayList<Event> result = null;
+		Map<Long,String> map = new HashMap<Long, String>();
 		try{
-			result = (ArrayList<String>) sqlQuery.getResultList();			
+			result = (ArrayList<Event>) sqlQuery.getResultList();	
+//			Iterator i=result.iterator();
+//			while(i.hasNext()){
+//				Event evt=(Event) i.next();
+//				map.put(evt.getId(),evt.getTitle());
+//			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
