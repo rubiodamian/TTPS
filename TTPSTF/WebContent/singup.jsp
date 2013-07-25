@@ -22,8 +22,13 @@
 		<s:textfield name="email" label="E-mail" />
 		<s:radio name="gender" label="Sexo" list="{'Masculino', 'Femenino'}" />
 		<s:textfield name="occupation" label="Ocupacion" />
-		<s:select label="Carrera" name="career" list="careerDAO.careers" listKey="id"
-			listValue="name" required="true" value="%{careerDAO.careers.{id}}"
+		<s:select label="Carrera" name="career" list="careerDAO.careers" listKey="id" 
+ 				listValue="name" required="true" value="%{careerDAO.careers.{id}}" 
+				headerKey="" headerValue="Seleccionar" />
+		<s:select label="Carrera" name="career" list="careerDAO.careers()" listKey="id"
+			listValue="name" required="true" value="%{careerDAO.careers().{id}}" 
+		<s:select label="Carrera" name="career" list="careerDAO.careers()" listKey="id"
+			listValue="name" required="true" value="%{careerDAO.careers().{id}}" 
 			headerKey="" headerValue="Seleccionar"
 />
 			<s:submit value="Registrarme" />

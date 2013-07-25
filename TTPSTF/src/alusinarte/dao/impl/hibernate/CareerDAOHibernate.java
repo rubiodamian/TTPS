@@ -14,11 +14,12 @@ import alusinarte.persistence.Emf;
 
 public class CareerDAOHibernate implements CareerDAO {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Career> careers() {
 		EntityManager em = Emf.getEmf().createEntityManager();
-		String query = "SELECT name FROM Career";
-		Query sqlQuery = em.createQuery(query);
+		String query = "SELECT id,name FROM Career";
+		Query sqlQuery = em.createNativeQuery(query);
 
 		List<Career> careers = new ArrayList<Career>();
 		try {
