@@ -7,6 +7,14 @@
 <title>Inicio AlusInArte</title>
 </head>
 <body>
+	<h1>Index</h1>
+	<a href="/users/singup">Registrarse</a></br>
+	<a href="addEventView">Agregar evento</a></br>
+	<a href="modEventView">Modificar evento</a></br>
+	
+	
+	
+	
 <h1>INDEX</h1>
 </body>
 </html>
