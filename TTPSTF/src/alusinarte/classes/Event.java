@@ -3,6 +3,7 @@ package alusinarte.classes;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity 
 public class Event {
@@ -14,13 +15,16 @@ public class Event {
 	private String day;
 	private String hour;
 	private String place;
-	private String category;
+	
+	
+	@ManyToOne
+	private Category category;
 	
 	public Event(){
-		super(); 
+		super();
 	}
 	
-	public Event(String tit, String desc, String day, String hour, String place, String cat){
+	public Event(String tit, String desc, String day, String hour, String place, Category cat){
 		super();
 		this.setTitle(tit);
 		this.setDescription(desc);
@@ -62,12 +66,13 @@ public class Event {
 	public void setPlace(String place) {
 		this.place = place;
 	}
-	public String getCategory() {
+	public Category getCategory() {
 		return category;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategory(Category cat) {
+		this.category = cat;
 	}
+	
 	
 
 }

@@ -8,10 +8,13 @@
 </head>
 <body>
 	<h1>Index</h1>
-	<a href="/users/singup">Registrarse</a></br>
+	<a href="/users/singup">Registrarse</a></br></br>
 	<a href="addEventView">Agregar evento</a></br>
 	<a href="modEventView">Modificar evento</a></br>
-	
+	<a href="delEventView">Eliminar evento</a></br></br>
+	<a href="addCategoryView">Agregar categoria</a></br>
+	<a href="modCategoryView">Modificar categoria</a></br>
+	<a href="delCategoryView">Eliminar categoria</a></br>
 	
 	
 	

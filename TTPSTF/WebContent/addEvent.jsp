@@ -13,13 +13,13 @@
 	<h3>-------------------------------------</h3>
 	<s:fielderror />
 
-	<s:form action="/events/addEvent">
+	<s:form action="addEvent" method="post">
 		<s:textfield name="title" label="Titulo" />
 		<s:textfield name="description" label="Descripcion" />
 		<s:textfield name="day" label="Dia" />
 		<s:textfield name="hour" label="Hora" />
 		<s:textfield name="place" label="Lugar" />
-		<s:select name="category" list="{'Musica','Arte','Plastica'}"
+		<s:select name="categoria" list="categorias"
 			headerKey="" headerValue="Seleccionar" label="Categoría" />
 		<s:submit value="Agregar"/>			
 	</s:form>

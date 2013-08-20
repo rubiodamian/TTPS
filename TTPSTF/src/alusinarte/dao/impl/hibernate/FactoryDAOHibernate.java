@@ -10,4 +10,7 @@ public class FactoryDAOHibernate {
 		return new EventDAOHibernate();
 	}
 
+	public static CategoryDAOHibernate getCategory(){
+		return new CategoryDAOHibernate();
+	}
 }
