@@ -17,7 +17,7 @@ import alusinarte.persistence.Emf;
 
 public class CareerDAOHibernate implements CareerDAO {
 
-	@SuppressWarnings("unchecked") 
+	@SuppressWarnings("unchecked")  
 	@Override
 	public Map<Long,String> careers() {
 		EntityManager em = Emf.getEmf().createEntityManager();
